@@ -1,0 +1,19 @@
+apiVersion: apps/v1 #kubernetes version for pod
+kind: ReplicaSet
+metadata:   #all side info for pod
+  name: backend    #labels are key value pairs having config details
+  labels:
+    app: backend
+  spec:    #main body
+    replicas: 3
+    selector:
+      matchLabels:
+        app: backend
+    template:
+      metadata:
+        labels:
+          app:backend
+      spec:
+        containers:
+        - name: nginx
+          image: nginx 
