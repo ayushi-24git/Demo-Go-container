@@ -17,7 +17,7 @@ WORKDIR /app
 ## Add this go mod download command to pull in any dependencies
 RUN go mod download
 RUN go build -o main .
-EXPOSE 8000
+EXPOSE 8081
 ## Our start command which kicks off
 ## our newly created binary executable
 CMD ["/app/main"]
